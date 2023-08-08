@@ -1,0 +1,24 @@
+# alacritty.toml
+
+live_config_reload = true
+
+[env]
+TERM = "alacritty"
+
+[font]
+size=16
+
+[font.normal]
+family="EnvycodeRNerdFont"
+style="Regular"
+
+[window]
+opacity=0.8
+
+[window.padding]
+x = 12
+y = 12
+
+[shell]
+program = "/usr/bin/zsh"
+
