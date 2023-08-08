@@ -61,12 +61,34 @@ return require('packer').startup(function(use)
     })
 
     -- File Tree
-    use (
-        'nvim-tree/nvim-tree.lua'
-    )
+    use ({
+        'nvim-tree/nvim-tree.lua',
+        'nvim-tree/nvim-web-devicons'
+    })
 
     -- Indent Guides
     use (
         'lukas-reineke/indent-blankline.nvim'
     )
+
+    -- Commentary
+    use 'tpope/vim-commentary'
+
+    -- Toggleterm
+    use ({
+        'akinsho/toggleterm.nvim',
+        tag='*',
+        config = function()
+            require('toggleterm').setup()
+        end
+    })
+
+    -- Barbar
+    use ({
+        'romgrk/barbar.nvim',
+        requires = {
+            'nvim-tree/nvim-web-devicons',
+            'lewis6991/gitsigns.nvim'
+        }
+    })
 end)
