@@ -8,7 +8,7 @@ return require('packer').startup(function(use)
         'rebelot/kanagawa.nvim',
         as='kanagawa',
         config=function()
-    --       vim.cmd('colorscheme kanagawa')
+          -- vim.cmd('colorscheme kanagawa')
     end
     })
 
@@ -17,8 +17,64 @@ return require('packer').startup(function(use)
         'folke/tokyonight.nvim',
         as='tokyonight',
         config=function()
-            vim.cmd('colorscheme tokyonight-night')
+            -- vim.cmd('colorscheme tokyonight-night')
     end
+    })
+
+    -- Gruvbox Theme
+    use({
+        'morhetz/gruvbox',
+        config = function()
+            -- vim.cmd.colorscheme('gruvbox')
+        end
+    })
+
+    use({
+        'catppuccin/nvim',
+        as='catppuccin',
+        config = function()
+            -- vim.cmd.colorscheme('catppuccin')
+        end
+    })
+
+    use ({
+        'AlexvZyl/nordic.nvim',
+        as='nordic',
+        config = function()
+            -- vim.cmd.colorscheme('nordic')
+        end
+    })
+
+    use({
+        'rmehri01/onenord.nvim',
+        as='onenord',
+        config = function()
+            -- vim.cmd.colorscheme('onenord')
+        end
+    })
+
+    use({
+        'EdenEast/nightfox.nvim',
+        as='nightfox',
+        config = function()
+            -- vim.cmd.colorscheme('carbonfox')
+        end
+    })
+
+    use({
+        'navarasu/onedark.nvim',
+        as='onedark',
+        config = function()
+            -- vim.cmd.colorscheme('onedark')
+        end
+    })
+
+    use({
+        'rose-pine/neovim',
+        as='rose-pine',
+        config = function()
+            vim.cmd.colorscheme('rose-pine')
+        end
     })
 
     -- Lualine
@@ -45,7 +101,15 @@ return require('packer').startup(function(use)
     use({
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
-        'neovim/nvim-lspconfig'
+        'neovim/nvim-lspconfig',
+        'mfussenegger/nvim-dap',
+        'jay-babu/mason-nvim-dap.nvim',
+    })
+
+    -- DAP UI
+    use({
+        'rcarriga/nvim-dap-ui',
+        requires = { 'mfussenegger/nvim-dap' }
     })
 
     -- CMP / Completion Plugins
