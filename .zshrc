@@ -104,3 +104,5 @@ alias code='/usr/bin/codium'
 
 export PATH=/home/am/.local/share/bob/nvim-bin:$PATH
 export PATH=/home/am/.local/bin:$PATH
+export DENO_INSTALL="/home/am/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"

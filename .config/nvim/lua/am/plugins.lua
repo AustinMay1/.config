@@ -1,10 +1,13 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+    -- Packer
 	use 'wbthomason/packer.nvim'
+    
+    --#region THEMES
 
     -- Kanagawa Theme
-    use({ 
+    use({
         'rebelot/kanagawa.nvim',
         as='kanagawa',
         config=function()
@@ -29,6 +32,7 @@ return require('packer').startup(function(use)
         end
     })
 
+    -- Catppuccin
     use({
         'catppuccin/nvim',
         as='catppuccin',
@@ -37,6 +41,7 @@ return require('packer').startup(function(use)
         end
     })
 
+    -- Nordic
     use ({
         'AlexvZyl/nordic.nvim',
         as='nordic',
@@ -45,14 +50,7 @@ return require('packer').startup(function(use)
         end
     })
 
-    use({
-        'rmehri01/onenord.nvim',
-        as='onenord',
-        config = function()
-            -- vim.cmd.colorscheme('onenord')
-        end
-    })
-
+    -- Nightfox
     use({
         'EdenEast/nightfox.nvim',
         as='nightfox',
@@ -61,6 +59,7 @@ return require('packer').startup(function(use)
         end
     })
 
+    -- Onedark
     use({
         'navarasu/onedark.nvim',
         as='onedark',
@@ -69,6 +68,7 @@ return require('packer').startup(function(use)
         end
     })
 
+    -- Rose-pine
     use({
         'rose-pine/neovim',
         as='rose-pine',
@@ -76,6 +76,8 @@ return require('packer').startup(function(use)
             vim.cmd.colorscheme('rose-pine')
         end
     })
+
+    --#endregion THEMES
 
     -- Lualine
     use({
@@ -154,5 +156,15 @@ return require('packer').startup(function(use)
             'nvim-tree/nvim-web-devicons',
             'lewis6991/gitsigns.nvim'
         }
+    })
+
+    -- Markdown-preview
+    use({
+        'iamcco/markdown-preview.nvim',
+        run = 'cd app && npm install',
+        setup = function()
+            vim.g.mkdp_filetypes = { 'markdown' }
+        end,
+        ft = { 'markdown' }
     })
 end)
